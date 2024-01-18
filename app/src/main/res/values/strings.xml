@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Memory Game</string>
+    <string name="question_mark">\?</string>
+</resources>
