@@ -7,27 +7,34 @@
     android:background="@drawable/home_background"
     tools:context=".HomeActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/topMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/darkPink"
             android:gravity="center"
-            android:layout_weight="1"
-            android:background="@color/darkPink">
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/pauseBtn"
-                android:layout_width="57dp"
-                android:layout_height="57dp"
+                android:layout_width="@dimen/_57sdp"
+                android:layout_height="@dimen/_57sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="4dp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:background="@drawable/baseline_pause_circle_24" />
 
             <TextView
@@ -35,190 +42,218 @@
                 style="@style/customButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="11dp"
+                android:layout_margin="@dimen/_11sdp"
                 android:layout_weight="1"
-                android:text="Moves : 0" />
+                android:text="Moves : 0"
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:id="@+id/time"
                 style="@style/customButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="11dp"
+                android:layout_margin="@dimen/_11sdp"
                 android:layout_weight="1"
-                android:text="Time : 0:00" />
+                android:text="Time : 0:00"
+                android:textSize="@dimen/_16ssp" />
 
 
         </LinearLayout>
 
         <GridLayout
+            android:id="@+id/grid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:columnCount="3">
+            android:columnCount="3"
+            app:layout_constraintBottom_toTopOf="@+id/bottomMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topMenu">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn1"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn1"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn2"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn2"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn3"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn3"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn4"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
+                android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn4"
                 android:text="@string/question_mark"
-                android:textSize="50sp"
-                android:background="@drawable/custom_btn" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn5"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn5"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn6"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn6"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn7"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn7"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn8"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn8"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn9"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn9"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn10"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn10"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn11"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn11"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn12"
                 style="@style/customButton"
-                android:layout_width="108dp"
-                android:layout_height="118dp"
-                android:layout_margin="9dp"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_margin="@dimen/_9sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:layout_marginBottom="@dimen/_9sdp"
                 android:background="@drawable/custom_btn"
                 android:onClick="btnClick"
                 android:tag="btn12"
                 android:text="@string/question_mark"
-                android:textSize="50sp" />
+                android:textSize="@dimen/_35ssp" />
 
         </GridLayout>
 
         <LinearLayout
+            android:id="@+id/bottomMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/darkPink"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 style="@style/customButton"
-                android:layout_width="90dp"
+                android:layout_width="@dimen/_85sdp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="11dp"
-                android:text="Highest score :" />
+                android:layout_margin="@dimen/_11sdp"
+                android:text="Highest score :"
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:id="@+id/highestMoves"
@@ -226,15 +261,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="11dp"
+                android:layout_marginRight="@dimen/_11sdp"
                 android:background="@drawable/custom_radius"
                 android:backgroundTint="#fff"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
+                android:paddingLeft="@dimen/_4sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_6sdp"
                 android:text="Moves : 0"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp"
-                android:textColor="@color/darkPink" />
+                android:textColor="@color/darkPink"
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:id="@+id/highestTime"
@@ -244,16 +280,17 @@
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/custom_radius"
                 android:backgroundTint="#fff"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
+                android:paddingLeft="@dimen/_4sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_6sdp"
                 android:text="Time : 0:00"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp"
-                android:textColor="@color/darkPink" />
+                android:textColor="@color/darkPink"
+                android:textSize="@dimen/_16ssp" />
 
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
